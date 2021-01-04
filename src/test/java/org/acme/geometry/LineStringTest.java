@@ -29,6 +29,7 @@ public class LineStringTest {
 		Assert.assertEquals(2, l.getNumPoints());
 		
 		Assert.assertEquals(true, l.getPointN(0).isEmpty());
+		Assert.assertEquals(true, l.isEmpty());
 		Assert.assertEquals(3.0, l.getPointN(1).getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(4.0, l.getPointN(1).getCoordinate().getY(), EPSILON);
 	}
@@ -38,6 +39,21 @@ public class LineStringTest {
 		// TODO
 		LineString l = new LineString();
 		Assert.assertEquals("LineString", l.getType());
+	}
+	
+	@Test
+	public void testTranslate(){
+		// TODO
+		List<Point> points = new ArrayList<Point>();
+		points.add(new Point(new Coordinate(3.0, 4.0)));
+		
+		LineString l = new LineString(points);
+		
+		l.translate(1.0, 1.0);
+		
+		Assert.assertEquals(false, l.isEmpty());
+		Assert.assertEquals(4.0, l.getPointN(0).getCoordinate().getX(), EPSILON);
+		Assert.assertEquals(5.0, l.getPointN(0).getCoordinate().getY(), EPSILON);
 	}
 	
 }

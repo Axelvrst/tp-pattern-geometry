@@ -21,6 +21,8 @@ public class CoordinateTest {
 		Coordinate c = new Coordinate(3.0, 4.0);
 		Assert.assertEquals(3.0, c.getX(), EPSILON);
 		Assert.assertEquals(4.0, c.getY(), EPSILON);
+		Assert.assertEquals(false, c.isEmpty());
+
 	}
 
 }
