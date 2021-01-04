@@ -31,11 +31,16 @@ public class LineString implements Geometry {
 	
 	@Override
 	public boolean isEmpty() {
-		return this.points == null;
+		for (Point p : points) {
+			if (p.isEmpty()) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public void translate(double dx, double dy) {
-		for(int i = 0; i < this.points.size(); i++) {
+		for (int i = 0; i < this.points.size(); i++) {
 			this.points.get(i).translate(dx, dy);
 		}
 	}
