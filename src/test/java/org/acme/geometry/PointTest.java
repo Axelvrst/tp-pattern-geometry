@@ -12,8 +12,7 @@ public class PointTest {
 	public void testDefaultConstructor(){
 		// TODO
 		Point p = new Point();
-		Assert.assertEquals(0.0, p.getCoordinate().getX(), EPSILON);
-		Assert.assertEquals(0.0, p.getCoordinate().getY(), EPSILON);
+		Assert.assertEquals(true, p.isEmpty());
 	}
 	
 	@Test

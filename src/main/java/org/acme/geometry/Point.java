@@ -21,5 +21,12 @@ public class Point implements Geometry {
 	public String getType() {
 		return "Point";
 	}
-
+	
+	public boolean isEmpty() {
+		return this.coordinate.isEmpty();
+	}
+	
+	public void translate(double dx, double dy) {
+		this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
+	}
 }

@@ -28,8 +28,7 @@ public class LineStringTest {
 		LineString l = new LineString(points);
 		Assert.assertEquals(2, l.getNumPoints());
 		
-		Assert.assertEquals(0.0, l.getPointN(0).getCoordinate().getX(), EPSILON);
-		Assert.assertEquals(0.0, l.getPointN(0).getCoordinate().getY(), EPSILON);
+		Assert.assertEquals(true, l.getPointN(0).isEmpty());
 		Assert.assertEquals(3.0, l.getPointN(1).getCoordinate().getX(), EPSILON);
 		Assert.assertEquals(4.0, l.getPointN(1).getCoordinate().getY(), EPSILON);
 	}
