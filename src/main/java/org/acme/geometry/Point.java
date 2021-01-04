@@ -22,11 +22,18 @@ public class Point implements Geometry {
 		return "Point";
 	}
 	
+	@Override
 	public boolean isEmpty() {
 		return this.coordinate.isEmpty();
 	}
 	
+	@Override
 	public void translate(double dx, double dy) {
 		this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
+	}
+	
+	@Override
+	public Geometry clone() {
+		return new Point (this.coordinate);
 	}
 }
