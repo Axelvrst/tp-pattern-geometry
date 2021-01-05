@@ -12,7 +12,7 @@ public class PointTest {
 	public void testDefaultConstructor(){
 		// TODO
 		Point p = new Point();
-		Assert.assertEquals(true, p.isEmpty());
+		Assert.assertTrue(p.isEmpty());
 	}
 	
 	@Test

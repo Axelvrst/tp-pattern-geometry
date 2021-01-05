@@ -3,6 +3,8 @@ package org.acme.geometry;
 public class Point implements Geometry {
 	
 	private Coordinate coordinate;
+	public static final String TYPE = "Point";
+
 	
 	
 	public Point() {
@@ -19,7 +21,7 @@ public class Point implements Geometry {
 
 	@Override
 	public String getType() {
-		return "Point";
+		return TYPE;
 	}
 	
 	@Override
@@ -33,7 +35,7 @@ public class Point implements Geometry {
 	}
 	
 	@Override
-	public Geometry clone() {
+	public Point clone() {
 		return new Point (this.coordinate);
 	}
 }

@@ -6,6 +6,7 @@ import java.util.List;
 public class LineString implements Geometry {
 	
 	private List<Point> points;
+	public static final String TYPE = "LineString";
 	
 	
 	public LineString() {
@@ -26,32 +27,27 @@ public class LineString implements Geometry {
 
 	@Override
 	public String getType() {
-		return "LineString";
+		return TYPE;
 	}
 	
 	@Override
 	public boolean isEmpty() {
-		for (Point p : points) {
-			if (p.isEmpty()) {
-				return true;
-			}
-		}
-		return false;
+		return this.points.isEmpty();
 	}
 	
 	@Override
 	public void translate(double dx, double dy) {
-		for (int i = 0; i < this.points.size(); i++) {
-			this.points.get(i).translate(dx, dy);
+		for (Point point : points) {
+			point.translate(dx, dy);
 		}
 	}
 	
 	@Override
-	public Geometry clone() {
-		List<Point> pts = new ArrayList<Point>();
+	public LineString clone() {
+		List<Point> pts = new ArrayList<>(getNumPoints());
 		
-		for (int i = 0; i < this.points.size(); i++) {
-			pts.add((Point) this.points.get(i).clone());
+		for (Point point : points) {
+			pts.add(point.clone());
 		}
 		
 		return new LineString(pts);
