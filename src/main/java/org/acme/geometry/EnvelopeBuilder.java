@@ -16,7 +16,7 @@ public class EnvelopeBuilder {
     }
 
     public Envelope build() {
-        if(coords.isEmpty()) {
+        if (coords.isEmpty()) {
         	return new Envelope();
         }
         
