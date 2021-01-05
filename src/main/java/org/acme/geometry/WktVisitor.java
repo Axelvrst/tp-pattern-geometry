@@ -13,6 +13,7 @@ public class WktVisitor implements GeometryVisitor {
 		this.buffer.append(point.getType().toUpperCase());
 		if (point.isEmpty()) {
 			this.buffer.append(" EMPTY");
+			return;
 		}
 		else {
             this.buffer.append("(").append(point.getCoordinate().getX()).append(" ").append(point.getCoordinate().getY()).append(")");
@@ -24,6 +25,7 @@ public class WktVisitor implements GeometryVisitor {
 		buffer.append(lineString.getType().toUpperCase());
 		if (lineString.isEmpty()) {
 			this.buffer.append(" EMPTY");
+			return;
 		}
 		else {
 			this.buffer.append("(");

@@ -3,7 +3,7 @@ package org.acme.geometry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EnvelopeBuilder {
+public class EnvelopeBuilder implements GeometryVisitor {
 	
 	private List<Coordinate> coords;
 
@@ -36,5 +36,17 @@ public class EnvelopeBuilder {
             return new Envelope(new Coordinate(Xmin, Ymin), new Coordinate(Xmax, Ymax));
         }
     }
+
+	@Override
+	public void visit(Point point) {
+		insert(point.getCoordinate());
+	}
+
+	@Override
+	public void visit(LineString lineString) {
+		for (int i = 0; i < lineString.getNumPoints(); i++) {
+			visit(lineString.getPointN(i));
+		}
+	}
 
 }
