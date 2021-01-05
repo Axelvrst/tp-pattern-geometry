@@ -13,32 +13,37 @@ public class LogGeometryVisitorTest {
 	@Test
 	public void testVisitPoint() {
 		
-		Geometry geometry = new Point(new Coordinate(3.0, 4.0));
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		PrintStream out = new PrintStream(os);
+		
 		LogGeometryVisitor visitor = new LogGeometryVisitor(out);
+		Geometry geometry = new Point(new Coordinate(3.0, 4.0));
 		geometry.accept(visitor);
 		
 		String result = os.toString();
+		String visit = "Je suis un point avec x=3.0 et y=4.0";
 		
-		Assert.assertEquals("Je suis un point avec x=3.0 et y=4.0", result);
+		Assert.assertEquals(visit, result);
 
 	}
 	
 	@Test
 	public void testVisitLineString() {
+
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+		PrintStream out = new PrintStream(os);
 		
 		List<Point> points = new ArrayList<Point>();
         points.add(new Point(new Coordinate(3.0, 4.0)));
         points.add(new Point(new Coordinate(1.0, 2.0)));
-        Geometry geometry = new LineString(points);		ByteArrayOutputStream os = new ByteArrayOutputStream();
-		PrintStream out = new PrintStream(os);
+        Geometry geometry = new LineString(points);	
 		LogGeometryVisitor visitor = new LogGeometryVisitor(out);
 		geometry.accept(visitor);
-		
+
+		String visit = "Je suis une polyligne définie par 2 point(s)";
 		String result = os.toString();
 		
-		Assert.assertEquals("Je suis une polyligne définie par 2 point(s)", result);
+		Assert.assertEquals(visit, result);
 
 	}
 	
