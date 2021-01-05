@@ -21,18 +21,16 @@ public class EnvelopeBuilder {
         }
         
         else {
-            double firstX = coords.get(0).getX();
-            double firstY = coords.get(0).getY();
-            double Xmin = 0.0;
-            double Xmax = 0.0;
-            double Ymin = 0.0;
-            double Ymax = 0.0;
+            double Xmin = coords.get(0).getX();
+            double Ymin = coords.get(0).getY();
+            double Xmax = coords.get(0).getX();
+            double Ymax = coords.get(0).getY();
             
             for (Coordinate coordinate : coords) {
-            	Xmin = Math.min(firstX, coordinate.getX());
-            	Ymin = Math.min(firstY, coordinate.getY());
-            	Xmax = Math.max(firstX, coordinate.getX());
-            	Ymax = Math.max(firstY, coordinate.getY());
+            	Xmin = Math.min(Xmin, coordinate.getX());
+            	Ymin = Math.min(Ymin, coordinate.getY());
+            	Xmax = Math.max(Xmax, coordinate.getX());
+            	Ymax = Math.max(Ymax, coordinate.getY());
             }
             
             return new Envelope(new Coordinate(Xmin, Ymin), new Coordinate(Xmax, Ymax));

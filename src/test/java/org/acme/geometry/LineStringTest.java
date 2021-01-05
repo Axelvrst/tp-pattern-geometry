@@ -70,4 +70,19 @@ public class LineStringTest {
 		Assert.assertEquals(4.0, l.getPointN(0).getCoordinate().getY(), EPSILON);
 	}
 	
+	@Test
+    public void testGetEnvelope() {
+        List<Point> points = new ArrayList<Point>();
+        
+        points.add(new Point(new Coordinate(3.0, 4.0)));
+        points.add(new Point(new Coordinate(1.0, 2.0)));
+        LineString l = new LineString(points);
+        Envelope envelope = l.getEnvelope();
+        
+        Assert.assertEquals(1.0, envelope.getXmin(), EPSILON);
+        Assert.assertEquals(2.0, envelope.getYmin(), EPSILON);
+        Assert.assertEquals(3.0, envelope.getXmax(), EPSILON);
+        Assert.assertEquals(4.0, envelope.getYmax(), EPSILON);
+    }
+	
 }
