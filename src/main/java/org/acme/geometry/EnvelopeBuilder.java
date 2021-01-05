@@ -7,6 +7,7 @@ public class EnvelopeBuilder implements GeometryVisitor {
 	
 	private List<Coordinate> coords;
 
+	
     public EnvelopeBuilder() {
         this.coords = new ArrayList<Coordinate>();
     }

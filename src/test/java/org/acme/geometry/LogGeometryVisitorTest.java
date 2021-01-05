@@ -12,7 +12,6 @@ public class LogGeometryVisitorTest {
 	
 	@Test
 	public void testVisitPoint() {
-		
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		PrintStream out = new PrintStream(os);
 		
@@ -24,12 +23,10 @@ public class LogGeometryVisitorTest {
 		String visit = "Je suis un point avec x=3.0 et y=4.0";
 		
 		Assert.assertEquals(visit, result);
-
 	}
 	
 	@Test
 	public void testVisitLineString() {
-
         ByteArrayOutputStream os = new ByteArrayOutputStream();
 		PrintStream out = new PrintStream(os);
 		
@@ -44,7 +41,6 @@ public class LogGeometryVisitorTest {
 		String result = os.toString();
 		
 		Assert.assertEquals(visit, result);
-
 	}
 	
 

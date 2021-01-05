@@ -40,6 +40,7 @@ public class LineString extends AbstractGeometry {
 		for (Point point : points) {
 			point.translate(dx, dy);
 		}
+		triggerChange();
 	}
 	
 	@Override
@@ -67,6 +68,5 @@ public class LineString extends AbstractGeometry {
 	public void accept(GeometryVisitor visitor) {
 		visitor.visit(this);
 	}
-	
-	
+		
 }

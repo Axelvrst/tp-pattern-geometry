@@ -4,6 +4,7 @@ public class WktVisitor implements GeometryVisitor {
 	
 	private StringBuilder buffer;
 	
+	
 	public WktVisitor() {
 		this.buffer = new StringBuilder();
 	}

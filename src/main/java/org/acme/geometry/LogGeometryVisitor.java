@@ -6,6 +6,7 @@ public class LogGeometryVisitor implements GeometryVisitor {
 	
 	private PrintStream out;
 	
+	
 	public LogGeometryVisitor(PrintStream out) {
 		this.out = out;
 	}

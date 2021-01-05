@@ -10,17 +10,14 @@ public class LineStringTest {
 	
 	public static final double EPSILON = 1.0e-15;
 
-	
 	@Test
 	public void testDefaultConstructor(){
-		// TODO
 		LineString l = new LineString();
 		Assert.assertEquals(0, l.getNumPoints());
 	}
 	
 	@Test
 	public void testConstructor(){
-		// TODO
 		List<Point> points = new ArrayList<Point>();
 		points.add(new Point());
 		points.add(new Point(new Coordinate(3.0, 4.0)));
@@ -35,14 +32,12 @@ public class LineStringTest {
 
 	@Test
 	public void testGetType(){
-		// TODO
 		LineString l = new LineString();
 		Assert.assertEquals("LineString", l.getType());
 	}
 	
 	@Test
 	public void testTranslate(){
-		// TODO
 		List<Point> points = new ArrayList<Point>();
 		points.add(new Point(new Coordinate(3.0, 4.0)));
 		
@@ -57,7 +52,6 @@ public class LineStringTest {
 	
 	@Test
 	public void testClone(){
-		// TODO
 		List<Point> points = new ArrayList<Point>();
 		points.add(new Point(new Coordinate(3.0, 4.0)));
 		

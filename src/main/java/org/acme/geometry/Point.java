@@ -4,7 +4,6 @@ public class Point extends AbstractGeometry {
 	
 	private Coordinate coordinate;
 	public static final String TYPE = "Point";
-
 	
 	
 	public Point() {
@@ -32,6 +31,7 @@ public class Point extends AbstractGeometry {
 	@Override
 	public void translate(double dx, double dy) {
 		this.coordinate = new Coordinate(this.coordinate.getX() + dx, this.coordinate.getY() + dy);
+		triggerChange();
 	}
 	
 	@Override
