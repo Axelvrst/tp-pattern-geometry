@@ -3,6 +3,10 @@ package org.acme.geometry;
 public class WktVisitor implements GeometryVisitor {
 	
 	private StringBuilder buffer;
+	
+	public WktVisitor() {
+		this.buffer = new StringBuilder();
+	}
 
 	@Override
 	public void visit(Point point) {
